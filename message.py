@@ -21,8 +21,10 @@ def getReplyMessage(message):
         strResult = messageGraduate()
     elif "하.." in message:
         strResult = messageHa()
-    elif "호규" in message:
+    elif "호규" in message or "호뀨" in message:
         strResult = messageHokyu()
+    elif "육군" in message or "유꾼" in message or "아미타이거" in message:
+        strResult = messageJJamTiger()
     elif "배고파" in message:
         strResult = messageHungry()
     elif "이런.." in message:
@@ -199,6 +201,17 @@ def messageHokyu():
 #    elif randInt == 3:
 #        strMessage = "호규가 입대한 지 %d일 되었습니다."%(goneDays)
     
+    return strMessage
+
+def messageJJamtiger():
+    strMessage = ""
+
+    randInt = random.randrange(0, 2)
+    if randInt == 0:
+        strMessage = "유꾼 유꾼 유꾼"
+    elif randInt == 1:
+        strMessage = "유꾼 아미타이거~"
+
     return strMessage
 
 def messageHungry():
